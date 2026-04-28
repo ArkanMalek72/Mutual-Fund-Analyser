@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  fundscope:
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - fundscope_data:/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    restart: unless-stopped
+
+volumes:
+  fundscope_data:
